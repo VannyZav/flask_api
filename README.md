@@ -20,7 +20,7 @@
 
 
 1. create event:<br/>
-- (в примере тестовые данные в теле запроса)<br/>
+   -(в примере тестовые данные в теле запроса)<br/>
   curl http://127.0.0.1:5000/api/v1/calendar/events -Method POST -ContentType 'application/json' -Body '{"date": "1976.09.21", "title": "Test curl", "text": "Hello from Curl"}'
 
 
