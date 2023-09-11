@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from storage_inteface import EventStorageInterface
 
+
 app = Flask(__name__)
 
 
@@ -36,10 +37,8 @@ def add_event():
     text = data['text']
 
     valid, error_message = validate_event_data(date, title, text)
-
     if not valid:
         return jsonify({'message': error_message}), 400
-
     event = storage_interface.add_event(date, title, text)
     return jsonify(event), 201
 
@@ -60,10 +59,8 @@ def update_event(event_id):
     text = data.get('text')
 
     valid, error_message = validate_event_data(date, title, text)
-
     if not valid:
         return jsonify({'message': error_message}), 400
-
     if not storage_interface.update_event(event_id, date=date, title=title, text=text):
         return jsonify({'message': 'Event not found'}), 404
     return jsonify({'message': 'Event updated'})

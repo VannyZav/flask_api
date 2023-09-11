@@ -30,6 +30,3 @@ class EventStorage:
                 self.events.remove(event)
                 return True
         return False
-
-
-
