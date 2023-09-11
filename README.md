@@ -19,23 +19,23 @@
 в коммандной строке перемещаемся в папки с проектом с помощью команды cd, например: "cd flask_api"
 
 
-create event:<br/>
-(в примере тестовые данные в теле запроса)<br/>
-curl http://127.0.0.1:5000/api/v1/calendar/events -Method POST -ContentType 'application/json' -Body '{"date": "1976.09.21", "title": "Test curl", "text": "Hello from Curl"}'
+1. create event:<br/>
+- (в примере тестовые данные в теле запроса)<br/>
+  curl http://127.0.0.1:5000/api/v1/calendar/events -Method POST -ContentType 'application/json' -Body '{"date": "1976.09.21", "title": "Test curl", "text": "Hello from Curl"}'
 
 
-read list of events:
-curl http://127.0.0.1:5000/api/v1/calendar/events -Method GET
+2. read list of events:<br/>
+   -curl http://127.0.0.1:5000/api/v1/calendar/events -Method GET
 
 
-read event:
-curl http://127.0.0.1:5000/api/v1/calendar/events/<int:event_id> -Method GET
+3. read event:<br/>
+   -curl http://127.0.0.1:5000/api/v1/calendar/events/<int:event_id> -Method GET
 
 
-update event:
-curl http://127.0.0.1:5000/api/v1/calendar/events/<int:event_id> -Method PUT -ContentType 'application/json' -Body '{"date": "2023.09.22", "title": "test curl", "text": "Hello from updated message"}'
+4. update event:<br/>
+   -curl http://127.0.0.1:5000/api/v1/calendar/events/<int:event_id> -Method PUT -ContentType 'application/json' -Body '{"date": "2023.09.22", "title": "test curl", "text": "Hello from updated message"}'
 
 
-delete event:
-curl http://127.0.0.1:5000/api/v1/calendar/events/<int:event_id> -Method DELETE
+5. delete event:<br/>
+   -curl http://127.0.0.1:5000/api/v1/calendar/events/<int:event_id> -Method DELETE
 
