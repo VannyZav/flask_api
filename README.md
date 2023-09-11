@@ -12,19 +12,22 @@
 — API интерфейс: /api/v1/calendar/… (по аналогии с заметкой)
 — формат данных: "ГГГГ-ММ-ДД|заголовок|текст" (по аналогии с заметкой)
 
+# инструкция к API:
+в коммандной строке перемещаемся в папки с проектом с помощью команды cd, например: "cd flask_api"
 
 create event: 
-http://127.0.0.1:5000/api/v1/calendar/events  >>>  input data in this format {"date": "YYYY.MM.DD", "title": "sometitle", "text": "sometext"} (method POST)
+(в примере тестовые данные в теле запроса) 
+curl http://127.0.0.1:5000/api/v1/calendar/events -Method POST -ContentType 'application/json' -Body '{"date": "1976.09.21", "title": "Test curl", "text": "Hello from Curl"}'
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 read list of events:
-http://127.0.0.1:5000/api/v1/calendar/events >>> (method GET)
+curl http://127.0.0.1:5000/api/v1/calendar/events -Method GET
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 read event:
-http://127.0.0.1:5000/api/v1/calendar/events/<int:event_id> >>> (method GET)
+curl http://127.0.0.1:5000/api/v1/calendar/events/<int:event_id> -Method GET
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 update event:
-http://127.0.0.1:5000/api/v1/calendar/events/<int:event_id> >>> (method PUT)
+curl http://127.0.0.1:5000/api/v1/calendar/events/<int:event_id> -Method PUT -ContentType 'application/json' -Body '{"date": "2023.09.22", "title": "test curl", "text": "Hello from updated message"}'
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 delete event:
-http://127.0.0.1:5000/api/v1/calendar/events/<int:event_id> >>> (method DELETE)
+curl http://127.0.0.1:5000/api/v1/calendar/events/<int:event_id> -Method DELETE
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
